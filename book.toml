@@ -1,0 +1,7 @@
+[book]
+authors = ["Menzel IT GmbH"]
+language = "de"
+multilingual = false
+src = "src"
+title = "bm-uni.de"
+description = "Eine Website der Menzel-IT GmbH"
