@@ -1,3 +1,3 @@
 # LDAP 01 | Einführung
 
-Zum ersten Video gibt es leider noch keinen Code.
+Zum ersten Video gibt es leider keinen Code.

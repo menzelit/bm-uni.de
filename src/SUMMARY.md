@@ -6,7 +6,7 @@
 	- [Serverinstallation](ldap/ldap-02.md)
 	- [ACLs]()
 	- [Clientanbindung]()
-    - [Servertuning I, Overlays]()
+    - [Servertuning I, Overlays und Indices]()
     - [Servertuning II, eigene Attribute und Klassen]()
     - [Kerberos-Server]()
     - [Kerberos-Clientanbindung]()
