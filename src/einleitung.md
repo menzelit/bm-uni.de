@@ -8,4 +8,9 @@ Da wir Open-Source-Fans sind, steht der gesamte Code unter der [*CC BY-SA 4.0*](
 Der Unterbau zu dieser Website findet sich im [zugehörigen GitHub Repository](https://github.com/menzelit/bm-uni.de).
 
 ## Impressum und Hinweise
+
 Das Impressum der [Menzel IT GmbH](https://menzel-it.net), die hinter dem Projekt steht, findet Ihr [hier verlinkt](https://menzel-it.net/impressum). Der Kanal HTPTech wird übrigens von unserer Schwestergesellschaft [Dreieinhalb Medien](https://dreieinhalbmedien.de) umgesetzt.
+
+## Datenschutzhinweis
+
+Es gelten die [Datenschutzhinweise der Menzel IT GmbH](https://menzel-it.net/datenschutz/). Sämtliche Videolinks führen zu YouTube, sodass Daten an YouTube/google übertragen werden. Deren Datenschutzerklärungen findet Ihr [hier](https://policies.google.com/privacy?hl=de).

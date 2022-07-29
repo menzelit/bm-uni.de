@@ -1,4 +1,4 @@
-# LDAP 02
+# LDAP 02 | Einrichtung des Servers
 
 **WICHTIG:** Alle Kommandos werden als root-User ausgeführt!
 
