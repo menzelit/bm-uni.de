@@ -1,6 +1,6 @@
 # LDAP 02
 
-==Alle Kommandos werden als root-User ausgeführt!==
+**WICHTIG:** Alle Kommandos werden als root-User ausgeführt!
 
 ## Optionale Vorbereitung
 
@@ -211,7 +211,7 @@ ldapsearch -x -LLL -H "ldap://ldap.bm-uni.de" -b $basedn -D "$admindn" -w $admin
 
 ## LDAPS
 
-==Keys müsst Ihr selber besorgen!==
+**Hinweis:** Keys müsst Ihr selber besorgen!
 
 ```bash
 ll /etc/ldap/*.pem
