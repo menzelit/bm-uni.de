@@ -135,7 +135,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="ldap-02"><a class="header" href="#ldap-02">LDAP 02</a></h1>
-<p>==Alle Kommandos werden als root-User ausgeführt!==</p>
+<p><strong>WICHTIG:</strong> Alle Kommandos werden als root-User ausgeführt!</p>
 <h2 id="optionale-vorbereitung"><a class="header" href="#optionale-vorbereitung">Optionale Vorbereitung</a></h2>
 <p>Das war im Video bereits passiert.</p>
 <pre><code class="language-bash">ufw allow ssh
@@ -323,7 +323,7 @@ ldapsearch -x -LLL -H &quot;ldap://ldap.bm-uni.de&quot; -b $basedn -D &quot;$adm
 ldapsearch -x -LLL -H &quot;ldap://ldap.bm-uni.de&quot; -b $basedn -D &quot;$admindn&quot; -w $adminpwd &quot;(&amp;(gidNumber=10000)(loginShell=/bin/zsh))&quot; uid cn
 </code></pre>
 <h2 id="ldaps"><a class="header" href="#ldaps">LDAPS</a></h2>
-<p>==Keys müsst Ihr selber besorgen!==</p>
+<p><strong>Hinweis:</strong> Keys müsst Ihr selber besorgen!</p>
 <pre><code class="language-bash">ll /etc/ldap/*.pem
 chown openldap /etc/ldap/ldapkey.pem
 chmod 600 /etc/ldap/ldapkey.pem
