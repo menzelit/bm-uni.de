@@ -11,3 +11,5 @@
 	- [Servertuning II, eigene Attribute und Klassen]()
 	- [Kerberos-Server]()
 	- [Kerberos-Clientanbindung]()
+- [Queueing mit Slurm]()
+- [Wasserkühlung]()
