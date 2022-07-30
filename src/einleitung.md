@@ -1,6 +1,6 @@
 # Was ist die Baron Münchhausen Universität?
 
-Zuerst einmal ist die *Baron Münchhausen Universität* eines **nicht**: Eine real existierende Universität. (Das für die, die das noch nicht am Namen abgeleitet haben.) Viel mehr ist die *Baron Münchhausen Universität* oder *BM Uni* ein Projekt für den  [HPC Tech YouTube Kanal](https://www.youtube.com/channel/UCJ3l6hUsHy3B0URWZMwBf4Q/about) - und hier auf der Website findet Ihr Codeschnipsel und andere Textformate zum Nachlesen und Kopieren.
+Zuerst einmal ist die *Baron Münchhausen Universität* eines **nicht**: Eine real existierende Universität. (Das für die, die das noch nicht am Namen abgeleitet haben.) Viel mehr ist die *Baron Münchhausen Universität* oder *BM Uni* ein Projekt für den  [HPCTech YouTube Kanal](https://www.youtube.com/channel/UCJ3l6hUsHy3B0URWZMwBf4Q/about) - und hier auf der Website findet Ihr Codeschnipsel und andere Textformate zum Nachlesen und Kopieren.
 
 ## Code
 
