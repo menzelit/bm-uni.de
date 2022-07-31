@@ -9,7 +9,7 @@ Der Unterbau zu dieser Website findet sich im [&#10697; zugehörigen GitHub Repo
 
 ## Impressum und Hinweise
 
-Das Impressum der [&#10697; Menzel IT GmbH](https://menzel-it.net), die hinter dem Projekt steht, findet Ihr [&#10697; hier verlinkt](https://menzel-it.net/impressum). Der Kanal HTCTech wird übrigens von unserer Schwestergesellschaft [&#10697; Dreieinhalb Medien](https://dreieinhalbmedien.de) umgesetzt.
+Das Impressum der [&#10697; Menzel IT GmbH](https://menzel-it.net), die hinter dem Projekt steht, findet Ihr [&#10697; hier verlinkt](https://menzel-it.net/impressum). Der Kanal HPCTech wird übrigens von unserer Schwestergesellschaft [&#10697; Dreieinhalb Medien](https://dreieinhalbmedien.de) umgesetzt.
 
 ## Datenschutzhinweis
 
