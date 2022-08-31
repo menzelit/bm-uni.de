@@ -4,15 +4,18 @@ In dieser kleinen Videoreihe beschäftigen wir uns mit dem Aufbau einer Benutzer
 
 **Wichtig: Alle Videolinks führen von dieser Seite weg zu YouTube!**
 
-1. Einführung (~~Code~~, [&#10697; Video](https://youtu.be/7Y0pHUZ7M6Q))
-2. Aufbau des LDAP-Servers ([Code und Infos](ldap-02.html), [&#10697; Video](https://youtu.be/WVV_VGAMlCA))
-3. ACLs
-4. Clientanbindung
-5. einfache Verwaltung mit dem LDAP-Account-Manager
-6. Servertuning I, Overlays
-7. Servertuning II, eigene Attribute und Klassen
-8. Kerberos-Server
-9. Kerberos-Clientanbindung
+## Staffel 1
+1. Einführung (~~Code~~, [Video](https://youtu.be/7Y0pHUZ7M6Q))
+2. Aufbau des LDAP-Servers ([Code und Infos](ldap-02.html), [Video](https://www.youtube.com/watch?v=WVV_VGAMlCA))
+3. ACLs ([Code und Infos](ldap-03.html), Video noch in Arbeit)
+4. LDAP-Account-Manager
+5. Clientanbindung
+
+## Staffel 2
+1. Servertuning I, Overlays
+2. Servertuning II, eigene Attribute und Klassen
+3. Kerberos-Server
+4. Kerberos-Clientanbindung
 
 # Literatur
 
