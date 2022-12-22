@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<html lang="de" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>LDAP Account Manager - bm-uni.de</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="Eine Website der Menzel-IT GmbH">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../einleitung.html"><strong aria-hidden="true">1.</strong> Das Projekt</a></li><li class="chapter-item expanded "><a href="../ldap/index.html"><strong aria-hidden="true">2.</strong> LDAP Staffel I</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ldap/ldap-01.html"><strong aria-hidden="true">2.1.</strong> Einführung (kein Code)</a></li><li class="chapter-item expanded "><a href="../ldap/ldap-02.html"><strong aria-hidden="true">2.2.</strong> Serverinstallation</a></li><li class="chapter-item expanded "><a href="../ldap/ldap-03.html"><strong aria-hidden="true">2.3.</strong> ACLs</a></li><li class="chapter-item expanded "><a href="../ldap/ldap-04.html" class="active"><strong aria-hidden="true">2.4.</strong> LDAP Account Manager</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.5.</strong> Clientanbindung</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> LDAP Staffel II</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> einfache Verwaltung mit dem LDAP-Account-Manager</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> Servertuning I, Overlays und Indices</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> Servertuning II, eigene Attribute und Klassen</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.4.</strong> Kerberos-Server</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.5.</strong> Kerberos-Clientanbindung</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Queueing mit Slurm</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Wasserkühlung</div></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">bm-uni.de</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="ldap-04--ldap-account-manager"><a class="header" href="#ldap-04--ldap-account-manager">LDAP 04 | LDAP Account Manager</a></h1>
+<p><strong>WICHTIG:</strong> Alle Kommandos werden als root-User ausgeführt!</p>
+<h1 id="grundinstallation"><a class="header" href="#grundinstallation">Grundinstallation</a></h1>
+<p>Dateien gibt es über die <a href="https://ldap-account-manager.org/lamcms/LAMProReleases">LAM-Webseite</a>.</p>
+<pre><code class="language-bash">apt install /root/ldap-account-manager*.deb ldap-utils -y
+</code></pre>
+<h1 id="webserver"><a class="header" href="#webserver">Webserver</a></h1>
+<h2 id="apache-2-config-für-den-lam"><a class="header" href="#apache-2-config-für-den-lam">Apache-2-Config für den LAM</a></h2>
+<pre><code class="language-bash">cat &lt;&lt;EOF &gt;/etc/apache2/sites-available/lam.${domain}.conf
+&lt;VirtualHost *:80&gt;
+        ServerName lam.${domain}
+        Redirect permanent / https://lam.${domain}
+        ErrorLog \${APACHE_LOG_DIR}/error.log
+        CustomLog \${APACHE_LOG_DIR}/access.log combined
+&lt;/VirtualHost&gt;
+&lt;VirtualHost *:443&gt;
+        ServerName lam.${domain}
+        DocumentRoot /usr/share/ldap-account-manager
+        SSLEngine on
+        SSLCertificateFile    /etc/ssl/private/lam.${domain}/fullchain.pem
+        SSLCertificateKeyFile /etc/ssl/private/lam.${domain}/key.pem
+        SSLProtocol all -SSLv2 -SSLv3
+        SSLCipherSuite HIGH:!aNULL:!MD5
+        SSLHonorCipherOrder on
+        Header set Strict-Transport-Security &quot;max-age=15768000; preload&quot;
+        Header always append X-Frame-Options &quot;SAMEORIGIN&quot;
+        Header set Content-Security-Policy &quot;default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self'&quot;
+        Header always set Referrer-Policy &quot;no-referrer&quot;
+        Header set X-XSS-Protection &quot;1; mode=block&quot;
+        Header set X-Content-Type-Options &quot;nosniff&quot;
+        ErrorLog /var/log/apache2/lam.${domain}_error.log
+        CustomLog /var/log/apache2/lam.${domain}.log combined
+
+        $(sed '/^Alias*/s/^/#/g' /etc/apache2/conf-available/ldap-account-manager.conf)
+
+&lt;/VirtualHost&gt;
+EOF
+</code></pre>
+<h2 id="module-aktivieren-und-firewalleinstellungen-setzen"><a class="header" href="#module-aktivieren-und-firewalleinstellungen-setzen">Module aktivieren und Firewalleinstellungen setzen</a></h2>
+<pre><code class="language-bash">a2enmod ssl headers rewrite
+a2ensite lam.${domain}.conf
+a2dissite 000-default.conf
+ufw allow 80
+ufw allow 443
+systemctl restart apache2
+systemctl status apache2
+</code></pre>
+<h2 id="ldap-suchen-ausführen"><a class="header" href="#ldap-suchen-ausführen">LDAP-Suchen ausführen</a></h2>
+<pre><code class="language-bash">ldapsearch -x -LLL -H &quot;ldaps://ldap.bm-uni.de&quot; -b ou=users,$basedn -D &quot;$admindn&quot; -w $adminpwd uid
+ldapsearch -x -LLL -H &quot;ldaps://ldap.bm-uni.de&quot; -b ou=users,$basedn -D &quot;$admindn&quot; -w $adminpwd memberOf
+ldapsearch -x -LLL -H &quot;ldaps://ldap.bm-uni.de&quot; -b ou=users,$basedn -D &quot;$admindn&quot; -w $adminpwd &quot;(memberOf=cn=administration,ou=groups,dc=bm-uni,dc=de)&quot; memberOf
+</code></pre>
+<h1 id="skript-für-das-versenden-von-briefen"><a class="header" href="#skript-für-das-versenden-von-briefen">Skript für das Versenden von Briefen</a></h1>
+<h2 id="vorbereitung"><a class="header" href="#vorbereitung">Vorbereitung</a></h2>
+<pre><code class="language-bash">mkdir -p /opt/bm
+cd /opt/bm
+apt install python3-pip -f
+pip install fpdf
+</code></pre>
+<h2 id="wrapper-skript"><a class="header" href="#wrapper-skript">Wrapper-Skript</a></h2>
+<p>Damit das auch bei Dir klappt, musst Du in Deiner Nextcloud einen public-Link anlegen. Dieser hat dann das Format <code>https://${nextcloudurl}/index.php/s/${key}</code> - diese beiden musst Du hier unten dann ersetzen.</p>
+<pre><code class="language-bash">key=&quot;HIERDEINKEY&quot;
+nextcloudurl=&quot;HIERDEINENEXTCLOUD&quot;
+cat &lt;&lt;EOF &gt;/opt/bm/sendLetter
+#!/bin/bash
+/opt/bm/makeLetter \$1 \$2 \$3 \$4 \$5 \$6
+echo &quot;Brief erfolgreich erzeugt.&quot;
+curl -k -T /tmp/letter.pdf -u &quot;${key}:&quot; -H 'X-Requested-With: XMLHttpRequest' https://${nextcloudurl}/public.php/webdav/letter.pdf
+echo &quot;Brief erfolgreich hochgeladen.&quot;
+EOF
+chmod +x /opt/bm/sendLetter
+</code></pre>
+<h2 id="pdf-erzeugung"><a class="header" href="#pdf-erzeugung">PDF-Erzeugung</a></h2>
+<p>Wir nutzen hier das <a href="https://pyfpdf.readthedocs.io/en/latest/Tutorial/index.html">Modul pyFDPF</a> und erzeugen uns auf Basis der übergebenen Argumente aus dem Wrapper eine kleine PDF, die wir nach <code>/tmp</code> wegspeichern, um sie dann im Wrapper per <code>curl</code> hochzuladen.</p>
+<pre><code class="language-bash">cat &lt;&lt;EOF &gt;/opt/bm/makeLetter
+#!/usr/bin/env python3
+import sys
+from fpdf import FPDF
+pdf = FPDF()
+pdf.add_page()
+pdf.set_font('Arial', '', 12)
+pdf.cell(50, 10, sys.argv[1] + &quot; &quot; + sys.argv[2],0,1)
+pdf.cell(0, 3, sys.argv[3],0,1)
+pdf.cell(0, 20, &quot;Hallo &quot;+sys.argv[1]+&quot;,&quot;,0,1)
+pdf.cell(0, 3, &quot;Dein Nutzername ist &quot; +sys.argv[4] + &quot; und Dein Passwort &quot;+sys.argv[6]+&quot;.&quot;)
+pdf.output('/tmp/letter.pdf', 'F')
+EOF
+chmod +x /opt/bm/makeLetter
+</code></pre>
+<p><strong>Hinweis</strong>: Mit FPDF lassen sich erstaunlich komplexe PDF-Dateien erzeugen. Die <a href="http://www.fpdf.org/">Doku der originalen PHP-Klasse</a> zeigen hier einiges auf. Selbstverständlich könnte man natürlich auch LaTeX-Dokumente erzeugen und dann in eine PDF-Datei übersetzen lassen.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../ldap/ldap-03.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../ldap/ldap-03.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
