@@ -8,7 +8,7 @@ In dieser kleinen Videoreihe beschäftigen wir uns mit dem Aufbau einer Benutzer
 1. Einführung (~~Code~~, [Video](https://youtu.be/7Y0pHUZ7M6Q))
 2. Aufbau des LDAP-Servers ([Code und Infos](ldap-02.html), [Video](https://www.youtube.com/watch?v=WVV_VGAMlCA))
 3. ACLs ([Code und Infos](ldap-03.html), [Video](https://youtu.be/QiQaP017au0))
-4. LDAP-Account-Manager
+4. LDAP-Account-Manager([Code und Infos](ldap-04.html), Video)
 5. Clientanbindung
 
 ## Staffel 2
