@@ -6,7 +6,10 @@
 	- [Serverinstallation](ldap/ldap-02.md)
 	- [ACLs](ldap/ldap-03.md)
 	- [LDAP Account Manager](ldap/ldap-04.md)
-	- [Clientanbindung]()
+	- [Anbindung Nextcloud (kein Code)](ldap/ldap-05.md)
+	- [Anbindung Ubuntu und Telefone](ldap/ldap-06.md)
+- [Netbox]
+	- [Einführung]()
 - [LDAP Staffel II]()
 	- [einfache Verwaltung mit dem LDAP-Account-Manager]()
 	- [Servertuning I, Overlays und Indices]()
