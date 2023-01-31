@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="einleitung.html"><strong aria-hidden="true">1.</strong> Das Projekt</a></li><li class="chapter-item expanded "><a href="ldap/index.html"><strong aria-hidden="true">2.</strong> LDAP Staffel I</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ldap/ldap-01.html"><strong aria-hidden="true">2.1.</strong> Einführung (kein Code)</a></li><li class="chapter-item expanded "><a href="ldap/ldap-02.html"><strong aria-hidden="true">2.2.</strong> Serverinstallation</a></li><li class="chapter-item expanded "><a href="ldap/ldap-03.html"><strong aria-hidden="true">2.3.</strong> ACLs</a></li><li class="chapter-item expanded "><a href="ldap/ldap-04.html"><strong aria-hidden="true">2.4.</strong> LDAP Account Manager</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.5.</strong> Clientanbindung</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> LDAP Staffel II</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> einfache Verwaltung mit dem LDAP-Account-Manager</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> Servertuning I, Overlays und Indices</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> Servertuning II, eigene Attribute und Klassen</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.4.</strong> Kerberos-Server</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.5.</strong> Kerberos-Clientanbindung</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Queueing mit Slurm</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Wasserkühlung</div></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="einleitung.html"><strong aria-hidden="true">1.</strong> Das Projekt</a></li><li class="chapter-item expanded "><a href="ldap/index.html"><strong aria-hidden="true">2.</strong> LDAP Staffel I</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ldap/ldap-01.html"><strong aria-hidden="true">2.1.</strong> Einführung (kein Code)</a></li><li class="chapter-item expanded "><a href="ldap/ldap-02.html"><strong aria-hidden="true">2.2.</strong> Serverinstallation</a></li><li class="chapter-item expanded "><a href="ldap/ldap-03.html"><strong aria-hidden="true">2.3.</strong> ACLs</a></li><li class="chapter-item expanded "><a href="ldap/ldap-04.html"><strong aria-hidden="true">2.4.</strong> LDAP Account Manager</a></li><li class="chapter-item expanded "><a href="ldap/ldap-05.html"><strong aria-hidden="true">2.5.</strong> Anbindung Nextcloud (kein Code)</a></li><li class="chapter-item expanded "><a href="ldap/ldap-06.html"><strong aria-hidden="true">2.6.</strong> Anbindung Ubuntu und Telefone</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Netbox</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> Einführung</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> LDAP Staffel II</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> einfache Verwaltung mit dem LDAP-Account-Manager</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> Servertuning I, Overlays und Indices</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> Servertuning II, eigene Attribute und Klassen</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.</strong> Kerberos-Server</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.5.</strong> Kerberos-Clientanbindung</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Queueing mit Slurm</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Wasserkühlung</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -160,7 +160,8 @@ Der Unterbau zu dieser Website findet sich im <a href="https://github.com/menzel
 <li>Aufbau des LDAP-Servers (<a href="ldap/ldap-02.html">Code und Infos</a>, <a href="https://www.youtube.com/watch?v=WVV_VGAMlCA">Video</a>)</li>
 <li>ACLs (<a href="ldap/ldap-03.html">Code und Infos</a>, <a href="https://youtu.be/QiQaP017au0">Video</a>)</li>
 <li>LDAP-Account-Manager(<a href="ldap/ldap-04.html">Code und Infos</a>, <a href="https://youtu.be/fRxPZJTz-pU">Video</a>)</li>
-<li>Clientanbindung</li>
+<li>Anbindung Nextcloud (<a href="ldap/ldap-05.html">Code und Infos</a>, <a href="https://www.youtu.be/4PFOeieaQHY">Video</a>)</li>
+<li>Anbindung Ubuntu und Telefone (<a href="ldap/ldap-06.html">Code und Infos</a>, <a href="https://www.youtu.be/fWtq0zhERLo">Video</a>)</li>
 </ol>
 <h2 id="staffel-2"><a class="header" href="#staffel-2">Staffel 2</a></h2>
 <ol>
@@ -823,6 +824,131 @@ EOF
 chmod +x /opt/bm/makeLetter
 </code></pre>
 <p><strong>Hinweis</strong>: Mit FPDF lassen sich erstaunlich komplexe PDF-Dateien erzeugen. Die <a href="http://www.fpdf.org/">Doku der originalen PHP-Klasse</a> zeigen hier einiges auf. Selbstverständlich könnte man natürlich auch LaTeX-Dokumente erzeugen und dann in eine PDF-Datei übersetzen lassen.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ldap-05--nextcloud-anbinden"><a class="header" href="#ldap-05--nextcloud-anbinden">LDAP 05 | Nextcloud anbinden</a></h1>
+<p>Zum 5. Video gibt es leider keinen Code.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ldap-06--ubuntu-anbinden"><a class="header" href="#ldap-06--ubuntu-anbinden">LDAP 06 | Ubuntu anbinden</a></h1>
+<h1 id="erste-abfragen"><a class="header" href="#erste-abfragen">Erste Abfragen</a></h1>
+<pre><code class="language-bash">basedn=&quot;&quot;
+admindn=&quot;cn=admin,$basedn&quot;
+adminpwd=&quot;&quot;
+domain=&quot;&quot;
+ldapsearch -x -D &quot;$admindn&quot; -b $basedn -w $adminpwd -H ldaps://ldap.${domain} displayName telephoneNumber
+ldapsearch -x -D &quot;$admindn&quot; -b $basedn -w $adminpwd -H ldaps://ldap.${domain} &quot;(objectClass=inetOrgPerson)&quot; displayName telephoneNumber
+ldapsearch -x -D &quot;$admindn&quot; -b $basedn -w $adminpwd -H ldaps://ldap.${domain} &quot;(&amp;(objectClass=inetOrgPerson)(telephoneNumber=*))&quot; displayName telephoneNumber
+ldapsearch -x -D &quot;$admindn&quot; -b $basedn -w $adminpwd -H ldaps://ldap.${domain} &quot;(&amp;(objectClass=inetOrgPerson)(telephoneNumber=*23125212))&quot; displayName telephoneNumber
+cat /etc/ldap/schema/core.schema | grep &quot;2.5.4.20&quot; -A5 -B1
+</code></pre>
+<h1 id="auf-dem-laptop"><a class="header" href="#auf-dem-laptop">Auf dem Laptop</a></h1>
+<h2 id="ersteinrichtung"><a class="header" href="#ersteinrichtung">Ersteinrichtung</a></h2>
+<pre><code class="language-bash">sudo su
+basedn=&quot;&quot;
+admindn=&quot;cn=admin,$basedn&quot;
+adminpwd=&quot;&quot;
+domain=&quot;&quot;
+apt install sddm-theme-maldives sssd -y
+
+cat&lt;&lt; EOF &gt;/etc/sddm.conf
+[Autologin]
+Relogin=false
+Session=
+User=
+
+[General]
+HaltCommand=/bin/systemctl poweroff
+InputMethod=compose
+Numlock=none
+RebootCommand=/bin/systemctl reboot
+
+[Theme]
+Current=maldives
+CursorTheme=
+DisableAvatarsThreshold=7
+EnableAvatars=true
+FacesDir=/usr/share/sddm/faces
+ThemeDir=/usr/share/sddm/themes
+
+[Users]
+DefaultPath=/bin:/usr/bin
+HideShells=
+HideUsers=
+MaximumUid=60000
+MinimumUid=1000
+RememberLastSession=true
+RememberLastUser=true
+ReuseSession=false
+
+[Wayland]
+EnableHiDPI=false
+SessionCommand=/usr/share/sddm/scripts/wayland-session
+SessionDir=/usr/share/wayland-sessions
+SessionLogFile=.local/share/sddm/wayland-session.log
+
+[X11]
+DisplayCommand=/usr/share/sddm/scripts/Xsetup
+DisplayStopCommand=/usr/share/sddm/scripts/Xstop
+EnableHiDPI=false
+MinimumVT=1
+ServerArguments=-nolisten tcp
+ServerPath=/usr/bin/X
+SessionCommand=/etc/sddm/Xsession
+SessionDir=/usr/share/xsessions
+SessionLogFile=.local/share/sddm/xorg-session.log
+UserAuthFile=.Xauthority
+XauthPath=/usr/bin/xauth
+XephyrPath=/usr/bin/Xephyr
+EOF
+
+cat &lt;&lt;EOF &gt;/etc/sssd/sssd.conf
+[sssd]
+config_file_version = 2
+services = nss, pam
+domains = bm-uni.de
+
+[nss]
+[pam]
+offline_credentials_expiration = 7
+
+[domain/bm-uni.de]
+id_provider = ldap
+auth_provider = ldap
+ldap_uri = ldaps://ldap.${domain}
+ldap_schema = rfc2307bis
+ldap_default_bind_dn = uid=pc-binder,ou=binduser,${basedn}
+ldap_default_authtok = fmE-HiMyrXbJ
+ldap_default_authtok_type = password
+ldap_search_base = ${basedn}
+ldap_user_search_base = ou=users,${basedn}
+ldap_user_object_class = inetOrgPerson
+ldap_user_name = uid
+ldap_group_name = cn
+ldap_user_gecos = gecos
+ldap_group_search_base = ou=groups,${basedn}
+ldap_group_object_class = posixgroup
+cache_credentials = True
+account_cache_expiration = 7
+enumerate = false
+EOF
+
+chown root:root /etc/sssd/sssd.conf
+chmod 600 /etc/sssd/sssd.conf
+pam-auth-update --enable mkhomedir
+
+systemctl start sssd
+systemctl enable sssd
+getent passwd
+getent passwd eerstie
+</code></pre>
+<h2 id="adminrechte"><a class="header" href="#adminrechte">Adminrechte</a></h2>
+<pre><code class="language-bash">echo &quot;%administration ALL=(ALL:ALL) ALL&quot; &gt; /etc/sudoers.d/administration
+chmod 0440 /etc/sudoers.d/administration
+</code></pre>
+<h2 id="zugangsbeschränkung"><a class="header" href="#zugangsbeschränkung">Zugangsbeschränkung</a></h2>
+<pre><code class="language-bash">cat &lt;&lt;EOF &gt;&gt;/etc/sssd/sssd.conf
+access_provider = simple
+simple_allow_groups = professors,administration
+EOF
+systemctl restart sssd
+</code></pre>
 
                     </main>
 
