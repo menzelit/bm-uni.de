@@ -8,7 +8,7 @@
 	- [LDAP Account Manager](ldap/ldap-04.md)
 	- [Anbindung Nextcloud (kein Code)](ldap/ldap-05.md)
 	- [Anbindung Ubuntu und Telefone](ldap/ldap-06.md)
-- [Netbox]
+- [Netbox]()
 	- [Einführung]()
 - [LDAP Staffel II]()
 	- [einfache Verwaltung mit dem LDAP-Account-Manager]()
