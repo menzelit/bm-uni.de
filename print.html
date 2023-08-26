@@ -33,6 +33,7 @@
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
@@ -70,10 +71,12 @@
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -81,16 +84,38 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="einleitung.html"><strong aria-hidden="true">1.</strong> Das Projekt</a></li><li class="chapter-item expanded "><a href="ldap/index.html"><strong aria-hidden="true">2.</strong> LDAP Staffel I</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ldap/ldap-01.html"><strong aria-hidden="true">2.1.</strong> Einführung (kein Code)</a></li><li class="chapter-item expanded "><a href="ldap/ldap-02.html"><strong aria-hidden="true">2.2.</strong> Serverinstallation</a></li><li class="chapter-item expanded "><a href="ldap/ldap-03.html"><strong aria-hidden="true">2.3.</strong> ACLs</a></li><li class="chapter-item expanded "><a href="ldap/ldap-04.html"><strong aria-hidden="true">2.4.</strong> LDAP Account Manager</a></li><li class="chapter-item expanded "><a href="ldap/ldap-05.html"><strong aria-hidden="true">2.5.</strong> Anbindung Nextcloud (kein Code)</a></li><li class="chapter-item expanded "><a href="ldap/ldap-06.html"><strong aria-hidden="true">2.6.</strong> Anbindung Ubuntu und Telefone</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Netbox</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> Einführung</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> LDAP Staffel II</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> einfache Verwaltung mit dem LDAP-Account-Manager</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> Servertuning I, Overlays und Indices</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> Servertuning II, eigene Attribute und Klassen</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.</strong> Kerberos-Server</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.5.</strong> Kerberos-Clientanbindung</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Queueing mit Slurm</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Wasserkühlung</div></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="einleitung.html"><strong aria-hidden="true">1.</strong> Das Projekt</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="users.html"><strong aria-hidden="true">1.1.</strong> Personen an der Uni</a></li></ol></li><li class="chapter-item expanded "><a href="ldap/index.html"><strong aria-hidden="true">2.</strong> LDAP Staffel I</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ldap/ldap-01.html"><strong aria-hidden="true">2.1.</strong> Einführung (kein Code)</a></li><li class="chapter-item expanded "><a href="ldap/ldap-02.html"><strong aria-hidden="true">2.2.</strong> Serverinstallation</a></li><li class="chapter-item expanded "><a href="ldap/ldap-03.html"><strong aria-hidden="true">2.3.</strong> ACLs</a></li><li class="chapter-item expanded "><a href="ldap/ldap-04.html"><strong aria-hidden="true">2.4.</strong> LDAP Account Manager</a></li><li class="chapter-item expanded "><a href="ldap/ldap-05.html"><strong aria-hidden="true">2.5.</strong> Anbindung Nextcloud (kein Code)</a></li><li class="chapter-item expanded "><a href="ldap/ldap-06.html"><strong aria-hidden="true">2.6.</strong> Anbindung Ubuntu und Telefone</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Netbox</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> Einführung</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> LDAP Staffel II</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> einfache Verwaltung mit dem LDAP-Account-Manager</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> Servertuning I, Overlays und Indices</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> Servertuning II, eigene Attribute und Klassen</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.</strong> Kerberos-Server</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.5.</strong> Kerberos-Clientanbindung</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Queueing mit Slurm</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Wasserkühlung</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
@@ -151,6 +176,7 @@ Der Unterbau zu dieser Website findet sich im <a href="https://github.com/menzel
 <p>Das Impressum der <a href="https://menzel-it.net">⧉ Menzel IT GmbH</a>, die hinter dem Projekt steht, findet Ihr <a href="https://menzel-it.net/impressum">⧉ hier verlinkt</a>. Der Kanal HPCTech wird übrigens von unserer Schwestergesellschaft <a href="https://dreieinhalbmedien.de">⧉ Dreieinhalb Medien</a> umgesetzt.</p>
 <h2 id="datenschutzhinweis"><a class="header" href="#datenschutzhinweis">Datenschutzhinweis</a></h2>
 <p>Es gelten die <a href="https://menzel-it.net/datenschutz/">⧉ Datenschutzhinweise der Menzel IT GmbH</a>. Sämtliche Videolinks führen zu YouTube, sodass Daten an YouTube/google übertragen werden. Deren Datenschutzerklärungen findet Ihr <a href="https://policies.google.com/privacy?hl=de">⧉ hier</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="personen-an-der-uni"><a class="header" href="#personen-an-der-uni">Personen an der Uni</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ldap-und-kerberos"><a class="header" href="#ldap-und-kerberos">LDAP und Kerberos</a></h1>
 <p>In dieser kleinen Videoreihe beschäftigen wir uns mit dem Aufbau einer Benutzer- und Authentifikationsdatenbank auf Basis von LDAP und Kerberos. Es gibt derzeit folgende Videos:</p>
 <p><strong>Wichtig: Alle Videolinks führen von dieser Seite weg zu YouTube!</strong></p>
@@ -991,5 +1017,6 @@ systemctl restart sssd
         });
         </script>
 
+    </div>
     </body>
 </html>
