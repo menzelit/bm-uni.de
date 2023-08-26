@@ -1,6 +1,7 @@
 # Summary
 
 - [Das Projekt](./einleitung.md)
+	- [Personen an der Uni](users.md)
 - [LDAP Staffel I](ldap/index.md)
 	- [Einführung (kein Code)](ldap/ldap-01.md)
 	- [Serverinstallation](ldap/ldap-02.md)
